@@ -1,4 +1,4 @@
-package com.connectivity;
+package com.games;
 public class Games
 {
    String id,gname,gprice,platform; 

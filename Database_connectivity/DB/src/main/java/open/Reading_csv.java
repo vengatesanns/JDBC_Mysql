@@ -16,11 +16,11 @@ public static void main(String args[]) throws IOException
      CSVReader cr=null;
     try{
       cr=new CSVReader(new FileReader("D://Emp.csv"),',');
-    ColumnPositionMappingStrategy<Games> cm=new ColumnPositionMappingStrategy<Games>();
-    cm.setType(Games.class);
+    ColumnPositionMappingStrategy<Games1> cm=new ColumnPositionMappingStrategy<Games1>();
+    cm.setType(Games1.class);
     cm.setColumnMapping( new String[]{"id","name"});
-    CsvToBean<Games> cb=new CsvToBean<Games>();
-    List<Games> data=cb.parse(cm,cr);
+    CsvToBean<Games1> cb=new CsvToBean<Games1>();
+    List<Games1> data=cb.parse(cm,cr);
     System.out.println(data);
    cr.close();
 }

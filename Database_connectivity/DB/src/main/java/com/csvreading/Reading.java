@@ -1,4 +1,4 @@
-/*package com.connectivity;
+/*package com.csvreading;
 import java.util.List;
 import java.util.ArrayList;
 import com.opencsv.*;

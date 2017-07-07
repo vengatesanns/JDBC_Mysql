@@ -1,5 +1,5 @@
 package open;
-public class Games
+public class Games1
 {
    String id,name,gprice,platform; 
     

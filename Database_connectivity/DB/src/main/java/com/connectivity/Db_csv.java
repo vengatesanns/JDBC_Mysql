@@ -8,15 +8,13 @@ public class Db_csv
   {
     read();
     upload();
-      
-
 }
-static void upload()
+public static void upload()
 {
 Connection conn=DBConnection.getDBConnection();
   try 
-        {
-                String loadQuery = "LOAD DATA LOCAL INFILE '" + "C://Users//vengatesan.n//Downloads//scientific.csv" + "' INTO TABLE scientific FIELDS TERMINATED BY ','" + " LINES TERMINATED BY '\n' (ID, Gname, Gprice,platform) ";
+{    //String val= "ENCLOSED BY '"';
+                String loadQuery = "LOAD DATA LOCAL INFILE '" + "C://Users//vengatesan.n//Downloads//scientific (2).csv" + "' INTO TABLE scientific FIELDS TERMINATED BY ','"  +  " LINES TERMINATED BY '\n' (id, gname,gprice,platform) ";
                 System.out.println(loadQuery);
                 Statement stmt = conn.createStatement();
                 stmt.execute(loadQuery);
@@ -47,31 +45,4 @@ static public void read()
     ex.printStackTrace();
   }
 }
-
-
-
-/*
-static Connection getcon()
-{
-    Connection conn=null;
-
-try
-{
-  if(conn==null)
-  {
-     Class.forName("com.mysql.jdbc.Driver");
-     conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/games","root","");
-  }
-  }
-  catch(Exception ex)
-  {
-    ex.printStackTrace();
-  }
-return conn;
-
-}*/
-
-
-
-
 }
