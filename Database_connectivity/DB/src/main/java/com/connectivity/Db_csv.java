@@ -8,6 +8,7 @@ public class Db_csv
   {
     read();
     upload();
+    download();
 }
 public static void upload()
 {
@@ -30,7 +31,7 @@ static public void read()
   int i=1;
   try
   {
-   Scanner scanner = new Scanner(new File("C://Users//vengatesan.n//Downloads//v.csv"));
+   Scanner scanner = new Scanner(new File("C://Users//vengatesan.n//Downloads//scientific (5).csv"));
         scanner.useDelimiter(",");
         
         while(scanner.hasNext()){
@@ -44,5 +45,21 @@ static public void read()
   {
     ex.printStackTrace();
   }
+}
+static void download()
+{
+Connection conn=DBConnection.getDBConnection();
+  try 
+{  
+                String loadQuery = "SELECT * FROM scientific INTO OUTFILE '" + "C://Users//vengatesan.n//Downloads//scientific (5).csv" + "'  FIELDS TERMINATED BY ','"  +  " LINES TERMINATED BY '\n' ";
+                System.out.println(loadQuery);
+                Statement stmt = conn.createStatement();
+                stmt.execute(loadQuery);
+                System.out.println("DOWNLOADED successfully");
+        }
+      catch (Exception e)
+        {
+                e.printStackTrace();
+        }
 }
 }
